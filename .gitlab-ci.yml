@@ -1,0 +1,19 @@
+image: python
+
+stages:
+  - build
+  - test
+  - deploy
+
+build_job:
+  stage: build
+  tags:
+    - python
+  script:
+    - echo 'Building...'
+  only:
+    refs:
+      - master
+  when: manual
+
+
